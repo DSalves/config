@@ -1,6 +1,7 @@
 <configuration>
+	<property resource="application.properties"/>
 	<springProperty scope="context" name="logfiledirectory" source="logging.directory" defaultValue="/var/log" />
-	<springProperty scope="context" name="logfile" source="spring.application.name" defaultValue="servico" />
+	<springProperty scope="context" name="logfile" source="spring.application.name"/>
 	<springProperty scope="context" name="logstashhost" source="logging.logstash.host" defaultValue="192.168.125.45:5043" />
 	<springProperty scope="context" name="maxFileSize" source="logging.filesize.max" defaultValue="100MB" />
 	<springProperty scope="context" name="maxArchiveSize" source="logging.archivesize.max" defaultValue="1GB" />
