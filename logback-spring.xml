@@ -20,8 +20,7 @@
 	</appender>
 	<appender name="rolling" class="ch.qos.logback.core.rolling.RollingFileAppender">
 		<file>${logfiledirectory}/${logfile}.log</file>
-		<rollingPolicy
-			class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+		<rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
 			<fileNamePattern>${logfile}-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
 			<maxFileSize>${maxFileSize}</maxFileSize>
 			<maxHistory>${maxHistory}</maxHistory>
@@ -39,8 +38,7 @@
 		<logger name="org" level="${devLogLevel}">
 			<appender-ref ref="consoleOut" />
 		</logger>
-		<logger name="org.appfabs.sample.logaggregation"
-			level="${devLogLevel}">
+		<logger name="org.appfabs.sample.logaggregation" level="${devLogLevel}">
 			<appender-ref ref="rolling" />
 		</logger>
 	</springProfile>
@@ -65,8 +63,7 @@
 		<logger name="org" level="${productionLogLevel}">
 			<appender-ref ref="consoleOut" />
 		</logger>
-		<logger name="org.appfabs.sample.logaggregation"
-			level="${productionLogLevel}">
+		<logger name="org.appfabs.sample.logaggregation" level="${productionLogLevel}">
 			<appender-ref ref="rolling" />
 		</logger>
 	</springProfile>
