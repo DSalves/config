@@ -19,7 +19,7 @@
 		</encoder>
 	</appender>
 	<appender name="rolling" class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<file>${logfiledirectory}/${logfile}.log</file>
+		<file>${logfiledirectory}/${logfile}AA.log</file>
 		<rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
 			<fileNamePattern>${logfile}-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
 			<maxFileSize>${maxFileSize}</maxFileSize>
