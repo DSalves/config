@@ -42,7 +42,6 @@
 			<appender-ref ref="rolling" />
 		</logger>
 	</springProfile>
-
 	<springProfile name="staging">
 		<root level="${stagingLogLevel}">
 			<appender-ref ref="logStashAppender" />
@@ -54,7 +53,6 @@
 			<appender-ref ref="rolling" />
 		</logger>
 	</springProfile>
-
 	<springProfile name="production">
 		<root level="${productionLogLevel}">
 			<appender-ref ref="logStashAppender" />
