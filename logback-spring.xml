@@ -3,8 +3,8 @@
 	<springProperty scope="context" name="logfile" source="spring.application.name"/>
 	<springProperty scope="context" name="logstashhost" source="logging.logstash.host" defaultValue="192.168.125.45:5043" />
 	<springProperty scope="context" name="maxFileSize" source="logging.filesize.max" defaultValue="100MB" />
-	<springProperty scope="context" name="maxArchiveSize" source="logging.archivesize.max" defaultValue="10GB" />
-	<springProperty scope="context" name="maxHistory" source="logging.history.max" defaultValue="60" />
+	<springProperty scope="context" name="maxArchiveSize" source="logging.archivesize.max" defaultValue="1GB" />
+	<springProperty scope="context" name="maxHistory" source="logging.history.max" defaultValue="30" />
 	<springProperty scope="context" name="devLogLevel" source="logging.dev.loglevel" defaultValue="INFO" />
 	<springProperty scope="context" name="stagingLogLevel" source="logging.staging.loglevel" defaultValue="INFO" />
 	<springProperty scope="context" name="productionLogLevel" source="logging.production.loglevel" defaultValue="INFO" />
