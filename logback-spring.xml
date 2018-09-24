@@ -50,8 +50,7 @@
 		<logger name="org" level="${stagingLogLevel}">
 			<appender-ref ref="consoleOut" />
 		</logger>
-		<logger name="org.appfabs.sample.logaggregation"
-			level="${stagingLogLevel}">
+		<logger name="org.appfabs.sample.logaggregation" level="${stagingLogLevel}">
 			<appender-ref ref="rolling" />
 		</logger>
 	</springProfile>
