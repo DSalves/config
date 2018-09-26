@@ -2,7 +2,8 @@
 <configuration>
 	<include resource="org/springframework/boot/logging/logback/defaults.xml"/>	
 	<springProperty scope="context" name="logfiledirectory" source="logging.directory" defaultValue="/var/log" />​
-	<springProperty scope="context" name="springAppName" source="spring.application.name"/>
+	<springProperty scope="context" name="appName" source="spring.application.name"/>
+	<springProperty scope="context" name="appVersion" source="build.version"/>
 	
 	<!-- Example for logging into the build folder of your project -->
 	<property name="LOG_FILE" value="${logfiledirectory}/${springAppName}"/>​
@@ -46,7 +47,8 @@
 					<pattern>
 						{
 						"severity": "%level",
-						"service": "${springAppName:-}",
+						"service": "${appName:-}",
+						"version": "${appVersion:-}",
 						"trace": "%X{X-B3-TraceId:-}",
 						"span": "%X{X-B3-SpanId:-}",
 						"parent": "%X{X-B3-ParentSpanId:-}",
