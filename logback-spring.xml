@@ -23,36 +23,27 @@
 		</encoder>
 	</appender>
 
-	
-	​
-	<!-- Appender to log to file in a JSON format -->
-	<appender name="logstash" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
-		<destination>mark32.ddns.net:5000</destination>
-		<encoder  class="net.logstash.logback.encoder.LogstashEncoder">
-			<providers>
-				<pattern>
-					<pattern>
-						{
-						"severity": "%level",
-						"service": "${appName:-}",
-						"version": "${appVersion:-}",
-						"trace": "%X{X-B3-TraceId:-}",
-						"span": "%X{X-B3-SpanId:-}",
-						"parent": "%X{X-B3-ParentSpanId:-}",
-						"exportable": "%X{X-Span-Export:-}",
-						"pid": "${PID:-}",
-						"thread": "%thread",
-						"class": "%logger{40}",
-						"rest": "%message"
-						}
-					</pattern>
-				</pattern>
-			</providers>
+	<!-- Appender to log to file -->​
+	<appender name="file" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_FILE}.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<fileNamePattern>${LOG_FILE}.%d{yyyy-MM-dd}.%i</fileNamePattern>
+			<maxFileSize>100MB</maxFileSize>
+			<maxHistory>1</maxHistory>
+			<totalSizeCap>1GB</totalSizeCap>
+		</rollingPolicy>
+		<encoder>
+			<pattern>${CONSOLE_LOG_PATTERN}</pattern>
+			<charset>UTF8</charset>
 		</encoder>
 	</appender>
 	​
+	<!-- Appender to log to file in a JSON format -->
+	
+	​
 	<root level="INFO">
-		<appender-ref ref="logstash"/>
+
 		<appender-ref ref="console"/>
+		<appender-ref ref="file"/>
 	</root>
 </configuration>
