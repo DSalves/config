@@ -67,6 +67,5 @@
 	<root level="INFO">
 		<appender-ref ref="logstash"/>
 		<appender-ref ref="console"/>
-		<appender-ref ref="file"/>
 	</root>
 </configuration>
