@@ -23,20 +23,7 @@
 		</encoder>
 	</appender>
 
-	<!-- Appender to log to file -->​
-	<appender name="file" class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<file>${LOG_FILE}.log</file>
-		<rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-			<fileNamePattern>${LOG_FILE}.%d{yyyy-MM-dd}.%i</fileNamePattern>
-			<maxFileSize>100MB</maxFileSize>
-			<maxHistory>1</maxHistory>
-			<totalSizeCap>1GB</totalSizeCap>
-		</rollingPolicy>
-		<encoder>
-			<pattern>${CONSOLE_LOG_PATTERN}</pattern>
-			<charset>UTF8</charset>
-		</encoder>
-	</appender>
+	
 	​
 	<!-- Appender to log to file in a JSON format -->
 	<appender name="logstash" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
