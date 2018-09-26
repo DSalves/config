@@ -48,7 +48,7 @@
 						{
 						"severity": "%level",
 						"service": "${appName:-}",
-						"version": "${appVersion:-}",
+						"version": "@project.version@",
 						"trace": "%X{X-B3-TraceId:-}",
 						"span": "%X{X-B3-SpanId:-}",
 						"parent": "%X{X-B3-ParentSpanId:-}",
