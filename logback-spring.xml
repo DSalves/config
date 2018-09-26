@@ -51,7 +51,7 @@
 						"severity": "%level",
 						"service": "${appName:-}",
 						"version": "${appVersion:-}",
-						"porta": "${appPort:-}",
+						"port": "${appPort:-}",
 						"trace": "%X{X-B3-TraceId:-}",
 						"span": "%X{X-B3-SpanId:-}",
 						"parent": "%X{X-B3-ParentSpanId:-}",
