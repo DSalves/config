@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configuration scan="true">
-	<contextName>${appName}</contextName>
+<configuration scan="true">	
 	<include resource="org/springframework/boot/logging/logback/defaults.xml"/>	
 	<springProperty scope="context" name="logfiledirectory" source="logging.directory" defaultValue="/var/log" />​
 	<springProperty scope="context" name="appName" source="spring.application.name"/>
 	<springProperty scope="context" name="appVersion" source="build.version"/>
+	<contextName>${appName}</contextName>
 	
 	<!-- Example for logging into the build folder of your project -->
 	<property name="LOG_FILE" value="${logfiledirectory}/${appName}"/>​
