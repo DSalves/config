@@ -42,8 +42,7 @@
 	<appender name="logstash" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
 		<destination>mark32.ddns.net:5000</destination>
 		<encoder  class="net.logstash.logback.encoder.LogstashEncoder">
-			<includeContext>true</includeContext>
-			<context>tcp</context>
+			<includeContext>true</includeContext>.
 			<providers>
 				<pattern>
 					<pattern>
